@@ -1,0 +1,107 @@
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color .2s;
+  animation: fadeUp .4s ease both;
+}
+.card:hover { border-color: var(--border2); }
+.cardAlert  { border-color: var(--red2) !important; background: rgba(255,61,90,.04); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.top { display: flex; align-items: center; gap: 12px; }
+.icon {
+  width: 40px; height: 40px;
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(0,212,255,.06);
+  flex-shrink: 0;
+}
+
+.assetName {
+  font-family: var(--font-head);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-top: 2px;
+  border: 1px solid;
+}
+.ok      { color: var(--green);  border-color: var(--green2);  background: rgba(0,229,160,.08); }
+.under   { color: var(--red);    border-color: var(--red2);    background: rgba(255,61,90,.08); }
+.stale   { color: var(--amber);  border-color: var(--amber2);  background: rgba(255,184,48,.08); }
+.pending { color: var(--text2);  border-color: var(--border);  background: transparent; }
+
+.ratio {
+  margin-left: auto;
+  font-family: var(--font-head);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -1px;
+}
+
+/* ratio bar */
+.bar {
+  height: 4px;
+  background: var(--bg3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.barFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width .6s ease, background .4s;
+}
+.barLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: .5px;
+}
+
+/* data grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--bg3);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.gridItem { display: flex; flex-direction: column; gap: 2px; }
+.gridLabel { font-size: 10px; color: var(--text3); letter-spacing: .5px; }
+.gridVal   { font-size: 13px; font-weight: 500; color: var(--text); }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ts       { font-size: 10px; color: var(--text3); }
+.staleWarn { font-size: 10px; color: var(--amber); letter-spacing: 1px; }
+.noData   { font-size: 12px; color: var(--text3); }

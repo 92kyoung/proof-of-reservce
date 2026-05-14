@@ -1,0 +1,76 @@
+.root { min-height: 100vh; display: flex; flex-direction: column; }
+
+.main {
+  flex: 1;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section { display: flex; flex-direction: column; gap: 10px; }
+.sectionLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--text3);
+  text-transform: uppercase;
+  padding-left: 2px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 700px) { .twoCol { grid-template-columns: 1fr; } }
+
+/* error / loading */
+.errorBanner {
+  background: rgba(255,61,90,.08);
+  border: 1px solid var(--red2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--red);
+  font-size: 12px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text2);
+  font-size: 12px;
+  padding: 40px 0;
+}
+.spinner {
+  width: 14px; height: 14px;
+  border: 1.5px solid var(--border2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* contract info bar */
+.infoGrid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.infoItem  { display: flex; flex-direction: column; gap: 3px; }
+.infoLabel { font-size: 9px; color: var(--text3); letter-spacing: 1.5px; }
+.infoVal   { font-size: 11px; color: var(--text2); word-break: break-all; }

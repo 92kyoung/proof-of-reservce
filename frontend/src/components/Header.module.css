@@ -1,0 +1,78 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.left { display: flex; align-items: center; gap: 12px; }
+.logo {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,212,255,.05);
+}
+
+.title {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--accent);
+}
+.sub { font-size: 10px; color: var(--text3); letter-spacing: 1px; margin-top: 1px; }
+
+.right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.chip {
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 11px;
+}
+.chipLabel { color: var(--text3); letter-spacing: 1px; }
+.chipVal   { color: var(--text); font-weight: 500; }
+
+.status {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  border: 1px solid;
+}
+.status.ok      { color: var(--green);  border-color: var(--green2);  background: rgba(0,229,160,.07); }
+.status.fail    { color: var(--red);    border-color: var(--red2);    background: rgba(255,61,90,.07); }
+.status.unknown { color: var(--text2);  border-color: var(--border);  background: transparent; }
+
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 1.6s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.refreshBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  width: 30px; height: 30px;
+  border-radius: 4px;
+  font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  transition: color .15s, border-color .15s;
+}
+.refreshBtn:hover { color: var(--accent); border-color: var(--accent); }
+
+.lastPoll { font-size: 10px; color: var(--text3); }

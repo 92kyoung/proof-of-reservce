@@ -1,0 +1,58 @@
+/* ── Design system ── */
+:root {
+  --bg:        #080b10;
+  --bg2:       #0e131c;
+  --bg3:       #141b27;
+  --border:    #1e2d42;
+  --border2:   #243449;
+  --text:      #c8d8f0;
+  --text2:     #6a85a8;
+  --text3:     #3a5070;
+  --accent:    #00d4ff;
+  --accent2:   #0099cc;
+  --green:     #00e5a0;
+  --green2:    #00a370;
+  --red:       #ff3d5a;
+  --red2:      #cc1e38;
+  --amber:     #ffb830;
+  --amber2:    #cc8800;
+  --font-head: "Syne", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* scan-line overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 212, 255, 0.015) 3px,
+    rgba(0, 212, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+}

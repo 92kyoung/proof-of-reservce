@@ -1,0 +1,23 @@
+{
+  "name": "chainlink-proof-of-reserve",
+  "version": "1.0.0",
+  "description": "Chainlink Proof of Reserve — Hyperledger Besu",
+  "scripts": {
+    "compile":   "hardhat compile",
+    "deploy":    "hardhat run scripts/deploy.js --network besu",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat",
+    "oracle":    "node backend/oracle.js",
+    "api":       "node backend/index.js",
+    "test":      "hardhat test"
+  },
+  "dependencies": {
+    "cors":    "^2.8.5",
+    "dotenv":  "^16.4.5",
+    "ethers":  "^6.11.0",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  }
+}
